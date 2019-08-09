@@ -33,6 +33,9 @@ h1 {
   border: 1px solid #e6e6e6;
   min-height: calc(80vh);
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #ball {
