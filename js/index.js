@@ -1,12 +1,13 @@
 const displayEl = document.querySelector('#display');
+const messageEl = document.querySelector('#message');
 const ballEl = document.querySelector('#ball');
 
 window.addEventListener('deviceorientation', e => {
 	const { absolute, alpha, beta, gamma } = e;
 	const text = JSON.stringify({ absolute, alpha, beta, gamma }, null, 4);
-	displayEl.textContent = text;
+	messageEl.textContent = text;
 
-	updateIncrement({ x: (beta / 2) * 0.01, y: gamma * 0.01 });
+	updateIncrement({ x: beta, y: gamma });
 });
 
 const moveBall = (x, y) => {
